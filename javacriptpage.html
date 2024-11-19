@@ -14,6 +14,37 @@
         </div>
     </header>
     <main>
+
+        <section id="progress-section" class="section">
+            <h2>Progress</h2>
+            <div class="progress-container">
+                <div class="circle-progress" data-percent="94">
+                    <div class="label">HTML</div>
+                    <div class="inner-circle">
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+                <div class="circle-progress" data-percent="80">
+                    <div class="label">CSS</div>
+                    <div class="inner-circle">
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+                <div class="circle-progress" data-percent="60">
+                    <div class="label">JavaScript</div>
+                    <div class="inner-circle">
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+                <div class="circle-progress" data-percent="75">
+                    <div class="label">Forex</div>
+                    <div class="inner-circle">
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section class="about-js">
             <div class="container">
                 <h2>My JavaScript Philosophy</h2>
@@ -76,5 +107,34 @@
             <p>© 2024 JavaScript Expertise. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const circles = document.querySelectorAll(".circle-progress");
+
+    circles.forEach(circle => {
+        const targetValue = parseInt(circle.getAttribute("data-percent"), 10);
+        const percentageText = circle.querySelector(".percentage");
+
+        let currentValue = 0;
+
+        const interval = setInterval(() => {
+            if (currentValue >= targetValue) {
+                clearInterval(interval);
+            } else {
+                currentValue++;
+                const progress = (currentValue / 100) * 360;
+                percentageText.textContent = `${currentValue}%`;
+                circle.style.background = `conic-gradient(
+                    #007bff 0deg, 
+                    #007bff ${progress}deg, 
+                    #ccc ${progress}deg
+                )`;
+            }
+        }, 15); // Adjust speed by changing the interval time
+    });
+});
+
+    </script>
 </body>
 </html>

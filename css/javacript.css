@@ -90,6 +90,69 @@ h2,
     }
 }
 
+
+.progress-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.circle-progress {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#ccc 0%, #ccc 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: progress-animation 1.5s ease-out;
+}
+
+.circle-progress .label {
+    position: absolute;
+    top: -20px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.circle-progress[data-percent="94"] .label {
+    color: #007bff;
+}
+
+.circle-progress[data-percent="80"] .label {
+    color: #007bff;
+}
+
+.circle-progress[data-percent="60"] .label {
+    color: #007bff;
+}
+
+.circle-progress[data-percent="75"] .label {
+    color: #007bff;
+}
+
+.inner-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inner-circle .percentage {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {

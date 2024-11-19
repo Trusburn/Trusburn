@@ -41,13 +41,43 @@
         <img src="img/WhatsApp Image 2024-07-26 at 20.23.47_57b12c1f.jpg">
     </div>
 
+
+    <section id="progress-section" class="section">
+        <h2>Progress</h2>
+        <div class="progress-container">
+            <div class="circle-progress" data-percent="94">
+                <div class="label">HTML</div>
+                <div class="inner-circle">
+                    <span class="percentage">0%</span>
+                </div>
+            </div>
+            <div class="circle-progress" data-percent="80">
+                <div class="label">CSS</div>
+                <div class="inner-circle">
+                    <span class="percentage">0%</span>
+                </div>
+            </div>
+            <div class="circle-progress" data-percent="60">
+                <div class="label">JavaScript</div>
+                <div class="inner-circle">
+                    <span class="percentage">0%</span>
+                </div>
+            </div>
+            <div class="circle-progress" data-percent="75">
+                <div class="label">Forex</div>
+                <div class="inner-circle">
+                    <span class="percentage">0%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <section id="skills" class="section" style="margin-top: 150px;">
         <h2>Skills</h2>
         <div class="skill-set">
             <div class="skill">HTML</div>
             <a href="css.html"><div class="skill">CSS</div></a>
             <a href="javacriptpage.html"><div class="skill">JavaScript</div></a>
-            <a href="#"><div class="skill">React</div></a>
             <a href="forex.html"><div class="skill">Forex Trading</div></a>
             <a href="forex.html"><div class="skill">Cryptocurrencies</div></a>
 
@@ -95,6 +125,34 @@
           const img = document.querySelector('img'); // Select the image
           img.classList.add('loaded'); // Add class to trigger opacity change
         });
+
+        // PROGRESS BAR SCRIPT
+        document.addEventListener("DOMContentLoaded", () => {
+    const circles = document.querySelectorAll(".circle-progress");
+
+    circles.forEach(circle => {
+        const targetValue = parseInt(circle.getAttribute("data-percent"), 10);
+        const percentageText = circle.querySelector(".percentage");
+
+        let currentValue = 0;
+
+        const interval = setInterval(() => {
+            if (currentValue >= targetValue) {
+                clearInterval(interval);
+            } else {
+                currentValue++;
+                const progress = (currentValue / 100) * 360;
+                percentageText.textContent = `${currentValue}%`;
+                circle.style.background = `conic-gradient(
+                    #007bff 0deg, 
+                    #007bff ${progress}deg, 
+                    #ccc ${progress}deg
+                )`;
+            }
+        }, 15); // Adjust speed by changing the interval time
+    });
+});
+
       </script>
 
 <script>

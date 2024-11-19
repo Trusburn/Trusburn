@@ -14,6 +14,36 @@
         </div>
         <a href="index.html">Home</a>
     </header>
+
+    <section id="progress-section" class="section">
+            <h2>Progress</h2>
+            <div class="progress-container">
+                <div class="circle-progress" data-percent="94">
+                    <div class="label">HTML</div>
+                    <div class="inner-circle">
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+                <div class="circle-progress" data-percent="80">
+                    <div class="label">CSS</div>
+                    <div class="inner-circle">
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+                <div class="circle-progress" data-percent="60">
+                    <div class="label">JavaScript</div>
+                    <div class="inner-circle">
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+                <div class="circle-progress" data-percent="75">
+                    <div class="label">Forex</div>
+                    <div class="inner-circle">
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     <main>
         <section class="service web-development">
             <div class="container">
@@ -26,31 +56,6 @@
                 <div class="skills">
                     <h3>My Skills</h3>
                     <div class="skill">
-                        <label>HTML</label>
-                        <div class="progress-bar" data-value="92">
-                            <div class="progress"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <label>CSS</label>
-                        <div class="progress-bar" data-value="89">
-                            <div class="progress"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <label>JavaScript</label>
-                        <div class="progress-bar" data-value="62">
-                            <div class="progress"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <label>Forex Trade</label>
-                        <div class="progress-bar" data-value="82">
-                            <div class="progress"></div>
-                        </div>
-                </div>
-            </div>
-        </section>
         <section class="service forex-trading">
             <div class="container">
                 <h2>Forex Trader</h2>
@@ -67,17 +72,33 @@
             <p>&copy; 2024 Trusburn - Full Stack Developer & Forex Trader</p>
         </div>
     </footer>
+
     <script>
-        // script.js
-document.addEventListener("DOMContentLoaded", () => {
-    const progressBars = document.querySelectorAll(".progress-bar");
-    progressBars.forEach(bar => {
-        const value = bar.getAttribute("data-value");
-        const progress = bar.querySelector(".progress");
-        progress.style.width = `${value}%`;
+        document.addEventListener("DOMContentLoaded", () => {
+    const circles = document.querySelectorAll(".circle-progress");
+
+    circles.forEach(circle => {
+        const targetValue = parseInt(circle.getAttribute("data-percent"), 10);
+        const percentageText = circle.querySelector(".percentage");
+
+        let currentValue = 0;
+
+        const interval = setInterval(() => {
+            if (currentValue >= targetValue) {
+                clearInterval(interval);
+            } else {
+                currentValue++;
+                const progress = (currentValue / 100) * 360;
+                percentageText.textContent = `${currentValue}%`;
+                circle.style.background = `conic-gradient(
+                    #007bff 0deg, 
+                    #007bff ${progress}deg, 
+                    #ccc ${progress}deg
+                )`;
+            }
+        }, 15); // Adjust speed by changing the interval time
     });
 });
-
     </script>
 </body>
 </html>
