@@ -1,0 +1,52 @@
+/* General styles for the game section */
+#game-section {
+    background-color: #f0f0f0; /* Light background for the game section */
+    border: 1px solid #007bff; /* Border for the section */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding for spacing */
+    text-align: center; /* Center the text */
+    margin: 20px; /* Margin for spacing from other content */
+    max-width: 500px; /* Set a max width */
+    margin: 20px auto; /* Center the section */
+}
+
+/* Input and button styling */
+input {
+    width: 100%; /* Make input full width */
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded button corners */
+    cursor: pointer; /* Pointer cursor for buttons */
+    font-size: 16px; /* Larger font size for better readability */
+    width: 100%; /* Full width for buttons on mobile */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+
+/* Responsive media query */
+@media (max-width: 768px) {
+    #game-section {
+        padding: 15px; /* Reduce padding for small screens */
+        margin: 10px; /* Less margin */
+    }
+
+    h2 {
+        font-size: 24px; /* Adjust heading size for mobile */
+    }
+
+    input, button {
+        font-size: 14px; /* Adjust font size for mobile */
+        padding: 8px; /* Slightly smaller padding for mobile */
+    }
+}

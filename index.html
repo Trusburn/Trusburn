@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trusburn Portfolio</title>
+    <link rel="stylesheet" href="css/Style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <!-- Your existing logo or heading -->
+            <h1>Full Stack Developer & Forex Trader</h1>
+    
+            <!-- Your existing navigation links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="game.html">Game Center</a></li>
+
+            </ul>
+    
+            <!-- Add a button for the hamburger menu -->
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </nav>
+    </header>
+            
+        </nav>
+    </header>
+
+    <div class="text" style="margin-left: 30px; margin-top: 80px;">
+        <p style="color: rgb(231, 220, 220);">Hello I'm Trusburn</p>
+        <h1 style="font-size: 70px; color: blue;">Web Developer</h1>
+        <h4 style="color: rgb(227, 38, 209);">"Web developer, graphic designer, and forex trader — I blend<br/> creativity and precision to build impactful websites,<br/> visuals, and trading<br/> strategies."</h4>
+        
+        <p style="margin-top: 25px; margin-left: 29px;"><a href="contact.html" class="contact-button">Get In Touch</a></p>
+    </div>
+
+    <div class="img">
+        <img src="img/WhatsApp Image 2024-07-26 at 20.23.47_57b12c1f.jpg">
+    </div>
+
+    <section id="skills" class="section" style="margin-top: 150px;">
+        <h2>Skills</h2>
+        <div class="skill-set">
+            <a href="#"><div class="skill">HTML</div></a>
+            <a href="#"><div class="skill">CSS</div></a>
+            <a href="#"><div class="skill">JavaScript</div></a>
+            <a href="#"><div class="skill">React</div></a>
+            <a href="#"><div class="skill">Forex Trading</div></a>
+            <a href="#"><div class="skill">Cryptocurrencies</div></a>
+
+            <div class="click">
+                <p>Click Any To Read Information</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project">
+                <h3>Project 1: Web App</h3>
+                <p>I Build, I Design, I Correct, And I Alter Code"Proggrammed Languges On Your Website. </p>
+            </div>
+            <div class="project">
+                <h3>Project 2: Forex Trading Bot</h3>
+                <p>"Working with my "Perfect "Trading tool, The "Services i offer with my "Flexible 'Online Machine'  profits all my Clients and Myself"</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <form action="comment.php" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="comment" placeholder="Leave a comment" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="comments">
+            <!-- Comments will appear here -->
+        </div>
+    </section>
+</br></br></br></br>
+    <footer>
+        <p>&copy; 2024 Trusburn - Full Stack Developer & Forex Trader</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        window.addEventListener('load', () => {
+          const img = document.querySelector('img'); // Select the image
+          img.classList.add('loaded'); // Add class to trigger opacity change
+        });
+      </script>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trost's Portfolio</title>
+    <link rel="stylesheet" href="css/Style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <!-- Your existing logo or heading -->
+            <h1>Trusburn - Full Stack Developer & Forex Trader</h1>
+    
+            <!-- Your existing navigation links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="game.html">Game Center</a></li>
+
+            </ul>
+    
+            <!-- Add a button for the hamburger menu -->
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </nav>
+    </header>
+
+    <div id="game-section">
+        <h2>Number Guessing Game</h2>
+        <p>Guess a number between <span id="min-number">1</span> and <span id="max-number">100</span></p>
+        <input type="number" id="user-guess" placeholder="Enter your guess" min="1" max="100">
+        <button id="submit-guess">Submit Guess</button>
+        <p id="feedback"></p>
+        <button id="play-again" style="display: none;">Play Again</button>
+    </div>
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <form action="comment.php" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="comment" placeholder="Leave a comment" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="comments">
+            <!-- Comments will appear here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Trost - Full Stack Developer & Forex Trader</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        window.addEventListener('load', () => {
+          const img = document.querySelector('img'); // Select the image
+          img.classList.add('loaded'); // Add class to trigger opacity change
+        });
+      </script>
+
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+</script>
+
+<script>
+    // Variables
+    let randomNumber = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 100
+    let attempts = 0; // Number of attempts made
+    const maxNumber = 100; // Maximum number for guessing
+    const minNumber = 1; // Minimum number for guessing
+
+    // Update HTML with the min and max numbers
+    document.getElementById('min-number').textContent = minNumber;
+    document.getElementById('max-number').textContent = maxNumber;
+
+    // Function to handle the guess submission
+    document.getElementById('submit-guess').onclick = function() {
+        const userGuess = Number(document.getElementById('user-guess').value);
+        attempts++;
+
+        // Check if the guess is correct
+        if (userGuess === randomNumber) {
+            document.getElementById('feedback').textContent = `Congratulations! You've guessed the number ${randomNumber} in ${attempts} attempts!`;
+            document.getElementById('play-again').style.display = 'inline-block'; // Show play again button
+            document.getElementById('submit-guess').disabled = true; // Disable guess button
+        } else if (userGuess < randomNumber) {
+            document.getElementById('feedback').textContent = 'Too low! Try again.';
+        } else if (userGuess > randomNumber) {
+            document.getElementById('feedback').textContent = 'Too high! Try again.';
+        }
+    };
+
+    // Function to restart the game
+    document.getElementById('play-again').onclick = function() {
+        randomNumber = Math.floor(Math.random() * 100) + 1; // Reset random number
+        attempts = 0; // Reset attempts
+        document.getElementById('feedback').textContent = ''; // Clear feedback
+        document.getElementById('play-again').style.display = 'none'; // Hide play again button
+        document.getElementById('user-guess').value = ''; // Clear input
+        document.getElementById('submit-guess').disabled = false; // Enable guess button
+    };
+</script>
+</body>
+</html>
