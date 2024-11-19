@@ -1,14 +1,14 @@
-/* styles.css */
+/* forex-styles.css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
     color: #333;
+    line-height: 1.6;
 }
 
 header {
-    background: #004b8d;
+    background: #003366;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -31,31 +31,43 @@ header p {
     padding: 20px 0;
 }
 
-.service {
-    padding: 40px 20px;
-    border-bottom: 1px solid #ccc;
+section {
+    margin-bottom: 40px;
 }
 
-.service h2 {
+h2 {
     font-size: 2rem;
+    margin-bottom: 20px;
+    color: #003366;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.services .service-item {
     margin-bottom: 20px;
 }
 
-.service p {
-    font-size: 1rem;
-    margin: 0;
+.services .service-item h3 {
+    font-size: 1.5rem;
+    color: #004b8d;
+    margin-bottom: 10px;
 }
 
-.web-development {
-    background: #f4f4f4;
+.benefits ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 20px 0;
 }
 
-.forex-trading {
-    background: #eaf0f6;
+.benefits ul li {
+    margin-bottom: 10px;
 }
 
 footer {
-    background: #333;
+    background: #003366;
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -66,47 +78,21 @@ footer p {
     font-size: 0.9rem;
 }
 
-.skills {
-    margin-top: 20px;
-}
-
-.skill {
-    margin-bottom: 15px;
-}
-
-.skill label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.progress-bar {
-    width: 100%;
-    background: #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-    height: 20px;
-}
-
-.progress {
-    height: 100%;
-    width: 0;
-    background: #004b8d;
-    border-radius: 10px;
-    transition: width 2s ease-in-out;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
     }
 
-    .service h2 {
+    h2 {
         font-size: 1.5rem;
     }
 
-    .service p {
+    p {
         font-size: 0.9rem;
+    }
+
+    .services .service-item h3 {
+        font-size: 1.2rem;
     }
 }

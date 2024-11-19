@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+    <link rel="stylesheet" href="css/skills.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Master of Versatility</h1>
+            <p>Weaving technology, creativity, and strategy to shape extraordinary outcomes.</p>
+        </div>
+    </header>
+    <main>
+        <section class="skills-intro">
+            <div class="container">
+                <h2>Who Am I?</h2>
+                <p>
+                    I am a web developer, designer, and forex trader who believes in creating impactful digital experiences and making bold financial decisions.
+                    With a blend of technical expertise, artistic sensibility, and market acumen, I thrive on solving complex challenges and delivering excellence.
+                </p>
+            </div>
+        </section>
+        <section class="skills-grid">
+            <div class="container">
+                <h2>My Expertise</h2>
+                <div class="skill-card" id="web-development">
+                    <h3>Web Development</h3>
+                    <p>
+                        Building scalable, responsive, and efficient websites with clean, maintainable code. Transforming ideas into digital reality.
+                    </p>
+                </div>
+                <div class="skill-card" id="design">
+                    <h3>Design</h3>
+                    <p>
+                        Crafting visually stunning and user-centric designs that leave a lasting impression. Design is where aesthetics meet function.
+                    </p>
+                </div>
+                <div class="skill-card" id="forex">
+                    <h3>Forex Trading</h3>
+                    <p>
+                        Navigating global markets with precision and strategy. Trading is an art of risk management and sharp decision-making.
+                    </p>
+                </div>
+                <div class="skill-card" id="html">
+                    <h3>HTML</h3>
+                    <p>
+                        The backbone of web pages, HTML powers everything I create. Semantic, clean, and efficient coding is my mantra.
+                    </p>
+                </div>
+                <div class="skill-card" id="css">
+                    <h3>CSS</h3>
+                    <p>
+                        Transforming static pages into beautiful, responsive experiences. CSS brings designs to life with style and motion.
+                    </p>
+                </div>
+                <div class="skill-card" id="javascript">
+                    <h3>JavaScript</h3>
+                    <p>
+                        Adding dynamism to the web with interactivity and seamless functionality. JavaScript makes everything smarter.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© 2024 My Skills Showcase. Excellence in Every Line of Code.</p>
+        </div>
+    </footer>
+    <script>
+        // Adding additional animations or interactivity
+document.querySelectorAll(".skill-card").forEach(card => {
+    card.addEventListener("mouseover", () => {
+        card.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.2)";
+    });
+    card.addEventListener("mouseout", () => {
+        card.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+    });
+});
+
+    </script>
+</body>
+</html>
